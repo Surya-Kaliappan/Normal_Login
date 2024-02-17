@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile Page</title>
+<style>
+
+body{
+	background: url("w.jpg") center fixed no-repeat;
+	background-size: cover;
+	overflow: hidden;
+}
+
+marquee{
+	opacity: 2%;
+	transition: 2s;
+	position: absolute;
+	font-family: sans-serif;
+	font-size: 30px;
+}
+
+marquee:hover{
+	opacity: 40%;
+	color: white;
+	transition: 1s;
+	font-size: 30px;
+	font-weight: 400px;
+	font-family: sans-serif;
+}
+
+ul{
+	position: absolute;
+	right: 5%;
+	top: 5%;
+}
+
+ul li{
+	list-style: none;
+	font-size: 30px;
+	display: inline-block;
+	margin-right: 40px;
+	transition: 2s;
+	color: white;
+	font-family: sans-serif;
+}
+
+ul li:hover{
+	font-size: 40px;
+	color: lightblue;
+	transition: 0.5s;
+	font-family: sans-serif;
+	cursor: pointer;
+}
+
+.box{
+	width: 400px;
+	padding: 25px;
+	position: absolute;
+	top: 19%;
+	left: 30%;
+	transform: translate(-50%,-50%);
+	background: rgba(0,0,0,0.6);
+	text-align: center;
+	transform: scale(1.3);
+	transition: 2s;
+	/*border-radius: 40%;*/
+	opacity:80%;
+}
+
+.box:hover{
+	border-radius: 20%;
+}
+
+.box h1{
+	color: white;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.box input[type="text"]{
+	border: 0;
+	background: none;
+	display: block;
+	margin-bottom: 20px;
+	margin-left: 38%;
+	text-align: center;
+	border: 3px solid #0367fd;
+	padding: 14px 10px;
+	width: 220px;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+	font-size: 16px;
+}
+
+.box label{
+	display: block;
+	padding: 14px 10px;
+	position: absolute;
+	margin: auto 20px;
+	right: 55%;
+	font-family: sans-serif;
+	color: white;
+}
+
+
+.box input[type="text"]:hover{
+	width: 230px;
+	border-color: #ffc400ec;
+}
+
+.box input[type="submit"]{
+	border: 0;
+	background: none;
+	display: center;
+	border: 3px solid #ffc400ec;
+	padding: 14px 10px;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25px;
+	cursor: pointer;
+	position: relative;
+}
+
+.box input[type="submit"]:hover{
+	color: #ffc400ec;
+	border-color: #0367fd;
+
+}
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+	<marquee>Created By Surya</marquee>
+	<ul>
+		<a href="login.html"><li>Home</li></a>
+	</ul>
+
+	<form name="myform" class="box" action="login.html">
+		<h1>PROFILE</h1>
+		<label>Name</label>
+		<input type="text" id="originalname" placeholder="Enter Original Name" autocomplete="off" title="Original Name(avoid numbers)">
+		<label>User Id</label>
+		<input type="text" id="username" placeholder="Enter Username" autocomplete="off" title="Username">
+		<label>Phone Number</label>
+		<input type="text" id="phonenumber" placeholder="Enter Phone Number" title="Phone Number" autocomplete="off">
+		<input type="submit" value="Save Changes" onclick="return(check());">
+	</form>	
+	
+</body>
+<script>
+
+	const pronum = localStorage.getItem('pronum');
+	const on = JSON.parse(localStorage.getItem('recordoname'));
+	const un = JSON.parse(localStorage.getItem('recordname'));
+	const ph = JSON.parse(localStorage.getItem('recordphone'));
+	document.getElementById('originalname').value = on[pronum];
+	document.getElementById('username').value = un[pronum];
+	document.getElementById('phonenumber').value = ph[pronum];
+
+	function check(){
+		const changeon = document.getElementById('originalname').value;
+		const changeun = document.getElementById('username').value;
+		const changeph = document.getElementById('phonenumber').value;
+
+		on[pronum] = changeon;
+		un[pronum] = changeun;
+		ph[pronum] = changeph;
+		
+		localStorage.setItem('recordoname',JSON.stringify(on));
+		localStorage.setItem('recordname',JSON.stringify(un));
+		localStorage.setItem('recordphone',JSON.stringify(ph));
+		alert("changes Saved...")
+	}
+	
+
+</script>
+</html>

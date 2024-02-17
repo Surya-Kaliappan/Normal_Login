@@ -1,0 +1,326 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>TaskBar own</title>
+<style>
+
+.container{
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 350px;
+	height: 100%;
+	background: ;
+	margin-right: -300px;
+}
+
+.container1{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 300px;
+	height: 100%;
+	background: grey;
+	font-family: sans-serif;
+
+}
+
+.btn{
+	/*position: fixed;
+	top: 15px;
+	width: 50px;
+	height: 50px;
+	background: grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	margin-right: 10px;*/
+
+	position: fixed;
+	top: 0;
+	width: 40px;
+	height: 100%;
+	background: grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container1 ul{
+	list-style: none;
+	padding: 50px;
+	position: fixed;
+}
+
+.container1 ul li{
+	color: white;
+	font-size: 18px;
+	font-weight: 600;
+	padding: 20px;
+	cursor: pointer;
+	text-align: center;
+
+	transition: 2s;
+}
+
+.container1 ul li:hover{	
+	font-size: 19px;
+	color: lightblue;
+	transition: 0.5s;
+}
+
+.container1 h1{
+	margin-left: 30px;
+}
+
+.container:active{
+	animation: taskbar 1s ease-in-out;
+}
+
+@keyframes taskbar{
+	0%{
+		margin-right: 0px;
+		transition-duration: 5s;
+	}
+	.btn{
+		color: red;
+	}
+}
+</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="container1">
+			<h1>Options</h1>
+			<ul>
+				<li>Home</li>
+				<li>Forgot Password</li>
+				<li>Source Code</li>
+				<li>Contact</li>
+			</ul>
+		</div>
+		<div class="btn">
+			<h1><</h1>
+		</div>
+
+	</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Taskbar</title>
+<style>
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+body{
+	background-color: #f2f2f2;
+}
+
+.container{
+	height: 100%;
+	width: 350px;
+	background-color: #fff;
+	position: absolute;
+	right: 0;
+	transform: translateX(-290px);
+}
+
+.container .content{
+	height: 100%;
+	width: 290px;
+	background-color: lightgreen;
+	position: absolute;
+	margin-left: 60px;
+}
+
+.container .toggle{
+	height: 100%;
+	width: 50px;
+	background-color: lightblue;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 50px;
+}
+
+.container .content h1{
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+
+ul{
+	text-align: center;
+	margin-top: 30%;
+}
+
+ul li{
+	list-style: none;
+	padding: 20px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+ ul li a{
+ 	text-decoration: none;
+ 	font-size: 20px;
+ 	font-weight: 500;
+ 	color: white;
+ }
+
+ input{
+ 	width: 50px;
+ 	height: 50px;
+
+ }
+
+ input:checked ~ .container{
+ 	transform: translateX(0);
+ }
+
+</style>
+</head>
+<body>
+	<label>
+		<div class="container">
+			<div class="content">
+				<h1>Options</h1>
+				<ul>
+					<li><a href="#">Forgot Password</a></li>	
+					<li><a href="#">Source Code</a></li>
+					<li><a href="#">Contact</a></li>				
+				</ul>
+			</div>
+			
+			<div class="toggle">
+				<input type="checkbox">
+			</div>
+		</div>
+	</label>
+</body>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Taskbar</title>
+
+<style>
+
+*{
+	overflow: hidden;
+}
+
+.box{
+	width: 100px;
+	height: 100px;
+	background: blue;
+	position: absolute;
+	transition: 0.5s;
+	margin-top: 40px;
+	margin-left: 91%;
+	transform: translateX(100px);
+	
+}
+
+input{
+	width: 20px;
+	height: 20px;
+}
+
+input:checked ~ label .box{
+	background-color: red;
+	transform: translateX(0px)
+}
+
+</style>
+</head>
+
+<body>
+
+	
+		<input type="checkbox" id="check">
+		<label>
+		<div class="box">
+		</div>
+		</label>
+
+	
+
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Taskbar</title>
+
+<style>
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#check{
+	width: 30px;
+	height: 30px;
+	margin-left: 80%;
+	position: absolute;
+}
+
+.row{
+	width: 200px;
+	height: 90%;
+	background-color: lightblue;
+	position: absolute;
+	transform: translateY(-100%);
+	right: 0;
+	transition: 0.5s ease;
+	opacity: 0;
+}
+
+input:checked ~ .row{
+	transform: translateY(10%);
+	background-color: lightgreen;
+	transition: 0.2s ease-out;
+	opacity: 100%;
+}
+
+h1{
+	position: absolute;
+	right: 0;
+	margin-right: 0px;
+	margin-top: 20px;
+}
+</style>
+</head>
+<body>
+	<label>
+	<input type="checkbox" id="check">
+	<h1>Options</h1>
+	
+	<div class="row">
+	</div>
+	</label>
+
+</body>
+</html>

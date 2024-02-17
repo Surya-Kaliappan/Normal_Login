@@ -1,0 +1,503 @@
+<!--DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Comment Area</title>
+
+<style>
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: sans-serif;
+	background: url(w.jpg) no-repeat center fixed;
+	background-size: cover;
+	overflow: hidden;
+}
+
+
+
+.comm textarea{
+	width: 200px;
+	height: 100px;
+	position: relative;
+	margin-top: 30%;
+	margin-left: 65%;
+	font-size: 20px;
+	background: transparent;
+	font-family: sans-serif;
+	border: 5px solid #0367fd;
+	border-radius: 0% 15% 0% 15%;
+	color:#fff;
+}
+
+.comm button{
+	border: 0;
+	background: none;
+	display: block;
+	margin-left: 85%;
+	margin-top: -5%;
+	/*text-align: center;*/
+	border: 3px solid #ffc400ec;
+	padding: 14px 10px;
+	color: #0367fd;
+	border-radius: 24px;
+	transition: 0.25px;
+	cursor: pointer;
+	position: relative;
+}
+
+.comm button:hover{
+	background: #0367fd;
+	font-size: 20px;
+	color: #ffc400ec;
+}
+
+
+
+</style>
+</head>
+<body>
+
+	<div class="comm">
+		<form name="form">
+		<textarea placeholder="Comments." id="test"></textarea>
+		<button  id="send" onclick="check1();">SUBMIT</button>
+		</form>
+	</div>
+
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>check</title>
+</head>
+<style>
+
+body{
+	font-family: sans-serif;
+	background: url("w.jpg") center fixed no-repeat;
+	background-size: cover;
+	overflow: hidden;
+}
+
+#check{
+	position: absolute;
+}
+
+/*.container{
+	background-color: ;
+	width: 260px;
+	padding: 50px;
+
+}
+*/
+
+
+#box{
+	width: 400px;
+	padding: 25px;
+	position: absolute;
+	top: 25%;
+	left: 30%;
+	transform: translate(-50%,-50%);
+	background: rgba(0,0,0,0.6);
+	text-align: center;
+	transform: scale(1.3);
+	transition: 1s;
+	/*border-radius: 40%;*/
+	opacity:80%;
+}
+
+#box h2{
+	color: white;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+#box input[type="password"],#box input[type="text"]{
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 3px solid #0367fd;
+	padding: 14px 10px;
+	width: 220px;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25px;
+}
+
+#box input[type="password"]:hover,#box input[type="text"]:hover{
+	width: 230px;
+	border-color: #ffc400ec;
+}
+
+#box:hover{
+	transition: 0.5s;
+	opacity: 100%;
+}
+
+#h3{
+
+	background: none;
+	display: center;
+	color: white;
+	transition: 0.25s;
+	position: relative;
+}
+
+#h3:hover{
+	color: #ffc400ec;
+	cursor: none;
+}
+
+#box1{
+	width: 400px;
+	padding: 25px;
+	position: absolute;
+	top: 125%;
+	left: 30%;
+	transform: translate(-50%,-50%);
+	background: rgba(0,0,0,0.6);
+	text-align: center;
+	transform: scale(1.3);
+	transition: 1s;
+	/*border-radius: 40%;*/
+	opacity:80%;
+}
+
+
+#box1 h1{
+	color: white;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+#box1 input[type="text"]{
+	border: 0;
+	background: none;
+	display: block;
+	margin-bottom: 20px;
+	margin-left: 38%;
+	text-align: center;
+	border: 3px solid #0367fd;
+	padding: 14px 10px;
+	width: 220px;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+	font-size: 16px;
+}
+
+#box1 label{
+	display: block;
+	padding: 14px 10px;
+	position: absolute;
+	margin: auto 20px;
+	right: 57%;
+	font-family: sans-serif;
+	color: white;
+}
+
+#box1 input[type="text"]:hover{
+	width: 230px;
+	border-color: #ffc400ec;
+}
+
+#btn{
+	top: 10px;
+	border: 0;
+	background: none;
+	display: center;
+	border: 3px solid #ffc400ec;
+	padding: 14px 10px;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25px;
+	cursor: pointer;
+	position: relative;
+}
+
+#btn:hover{
+	color: #ffc400ec;
+	border-color: #0367fd;
+
+}
+
+
+#check:checked ~ #box{
+	
+	transition: 1s;
+	transform: translateY(-185%);
+}
+
+#check:checked ~ #box1{
+	transform: translateY(-165%) scale(1.3);
+	transition: 1s;
+}
+
+#check{
+	display: none;
+	visibility: hidden;
+	-webkit-appearance: none;
+}
+
+ul{
+	position: absolute;
+	right: 5%;
+	top: 7%;
+}
+
+ul li{
+	list-style: none;
+	font-size: 30px;
+	display: inline-block;
+	margin-right: 40px;
+	transition: 2s;
+	color: #f2f2f2;
+	padding: 20px 0;
+	transition: 0.5s;
+}
+
+ul li a{
+	list-style: none;
+	font-size: 30px;
+	display: inline-block;
+	margin-right: 40px;
+	transition: 2s;
+	color: #f2f2f2;
+	padding: 20px 0;
+	transition: 0.5s;
+	text-decoration: none;
+}
+
+ul li:hover{
+	transform: translateX(10px);
+	color: #0367fd;
+	transition: 0.5s;
+	font-family: sans-serif;
+	cursor: pointer;
+}
+
+ul li a:hover{
+	transform: translateX(10px);
+	color: #0367fd;
+	transition: 0.5s;
+	font-family: sans-serif;
+	cursor: pointer;
+}
+
+#h4{
+	color: #0367fd;
+	cursor: pointer;
+}
+
+#toggle{
+	position: absolute;
+	right: 5%;
+	top: 7%;
+	display: none;
+	visibility: none;
+}
+#h1{
+	position: absolute;
+	color: #fff;
+	right: 6%;
+	top: 7%;
+	cursor: pointer;
+}
+
+.content{
+	position: absolute;
+	right: 0;
+	height: 80%;
+	width: 300px;
+	background-color: none;
+	transform: translateY(-100%);
+	transition: 0.5s ease-in;
+}
+
+#toggle:checked ~ .content{
+	transform: translateY(20%);
+	background: none;
+	transition: 1s ease;
+}
+
+#toggle:checked ~ h1{
+	color: #0367fd;
+	font-size: 40px;
+	top: 6%;
+}
+
+
+
+
+</style>
+<body>
+
+<label>
+	<input type="checkbox" id="toggle">
+	<h1 id="h1" title="open Taskbar">Options</h1>
+	<div class="content" id="content">
+		<ul>
+		<li onclick="return(source());">Source_code</li>
+		<li onclick="return(home());"><a href="login.html">Login</a></li>
+		<h3 id="h4" title="close taskbar">Close</h3>
+		</ul>
+	</div>
+
+</label>
+
+<label>
+<input type="checkbox" id="check" onclick="return(check());">
+<form name="myform" id="box">
+	<h2>Username</h2>
+	<input type="text" id="username1" placeholder="Enter username">
+	<h2>Password</h2>
+	<input type="password" id="password" placeholder="Enter password">
+	<h3 id="h3">click the box</h3>
+
+</form>
+
+
+<form name="myform1" id="box1">
+
+	<h1>PROFILE</h1>
+	<label>Name</label>
+	<input type="text" id="originalname" placeholder="Enter Original Name" autocomplete="off" title="Original Name(avoid numbers)">
+	<label>User Id</label>
+	<input type="text" id="username" placeholder="Enter Username" autocomplete="off" title="Username">
+	<label>Phone Number</label>
+	<input type="text" id="phonenumber" placeholder="Enter Phone Number" title="Phone Number" autocomplete="off">
+	<h3 id="btn" onclick="return(check1());">Save Changes</h3>
+
+</form>
+</label>
+
+</body>
+
+<script>
+
+	var on = JSON.parse(localStorage.getItem('recordoname'));
+	var ph = JSON.parse(localStorage.getItem('recordphone'));
+	var un = JSON.parse(localStorage.getItem('recordname'));
+	i = true;
+	after = true;
+	function check(){
+		
+		const pw = document.getElementById('password').value;
+		const uname = document.getElementById('username1').value;
+		const pass = JSON.parse(localStorage.getItem('recordpass'));
+		if(uname != "" && uname != " " && uname!=null){
+			dupli = un.indexOf(uname);
+			if(pw != "" && pw != " " && pw != null){
+				if(dupli != -1){
+					i = false;
+					if(pw == pass[dupli]){
+						localStorage.setItem('con',on[dupli]);
+						localStorage.setItem('cun',un[dupli]);
+						localStorage.setItem('cph',ph[dupli]);
+						localStorage.setItem('pronum',dupli);
+
+						document.getElementById('originalname').value = localStorage.getItem('con');
+						document.getElementById('username').value = localStorage.getItem('cun');
+						document.getElementById('phonenumber').value = localStorage.getItem('cph');	
+						document.getElementById('password').value="";
+						document.getElementById('username1').value="";
+						return true;					
+					}
+					else{
+						alert("Invalid password....")
+						document.getElementById('password').value="";
+						
+					}
+				}
+				else{
+					alert("Invalid Username...")
+					document.getElementById('username1').value="";
+					document.getElementById('password').value="";
+
+				}
+			}
+			else{
+
+				alert("Enter Password...")	
+			}
+		}
+		else{
+			if(i == true){
+				alert("Enter Username...");
+			}
+		}
+		return false;
+
+	}
+
+	function check1(){
+		const changeon = document.getElementById('originalname').value;
+		const changeun = document.getElementById('username').value;
+		const changeph = document.getElementById('phonenumber').value;
+		const pronum = localStorage.getItem('pronum');
+
+		on[pronum] = changeon;
+		un[pronum] = changeun;
+		ph[pronum] = changeph;
+		if(on != "" && un != "" && ph != ""){
+
+			localStorage.setItem('recordoname',JSON.stringify(on));
+			localStorage.setItem('recordname',JSON.stringify(un));
+			localStorage.setItem('recordphone',JSON.stringify(ph));
+			alert("Changes Saved...")
+			after = false;
+		}
+		else{
+			alert("Fill The Empty column...")
+		}
+	}
+
+	function source(){
+		alert("Press Ctrl+u");
+		return false;
+	}
+
+	function home(){
+		const pronum = localStorage.getItem('pronum');
+		const con = on[pronum];
+		const cun = un[pronum];
+		const cph = ph[pronum];
+		const changeon = document.getElementById('originalname').value;
+		const changeun = document.getElementById('username').value;
+		const changeph = document.getElementById('phonenumber').value;
+
+		if(changeun == ""){
+			return true;
+		}
+		else if(changeun != ""){
+			if(changeon != con || changeun != cun || changeph != cph){
+				var c = confirm("Do you want changes...");
+				if(c){
+					check1();	
+					return true;					
+				}
+			}
+			else{
+				return true;
+				
+			}
+		}
+		return false;
+				
+	}
+		
+
+
+</script>
+</html>

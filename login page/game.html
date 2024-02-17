@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game</title>
+<style>
+#mycanvas{
+	background: #AAA;
+}
+</style>
+</head>
+<body>
+	<center><canvas id="mycanvas" height="400" width="500"></canvas></center>
+	<script>
+		var canvas = document.getElementById('mycanvas');
+		var ctx = canvas.getContext('2d'); // 'getContext' mean to draw a 2d picture
+
+		/*ctx.beginPath();// To show the image or shape what we draw here...
+		ctx.fillStyle = 'blue';
+		ctx.rect(10,10,40,40); //It helps to draw a rectangle or square(x,y,width,height)
+		ctx.stroke();
+		ctx.fill();
+		ctx.closePath();*/
+
+		var x = canvas.width/2;
+		var y = canvas.height/2;
+		var r = 10;
+		var dx = 2;
+		var dy = -2;
+
+
+		var ph = 10;
+		var pw = 80;
+		var px = canvas.width/2 - pw/2;
+		var py = canvas.height - ph;
+
+		var leftPressed = false;
+		var rightPressed = false;
+
+		document.addEventListener("keydown",keyDownFunction);
+		document.addEventListener("keyup",keyUpFunction);
+
+		function keyDownFunction(e){
+			if(e.keyCode == 37){
+				leftPressed = true;
+			}
+			else if(e.keyCode == 39){
+				rightPressed = true;
+			}
+		}
+
+		function keyUpFunction(e){
+			if(e.keyCode == 37){
+				leftPressed = false;
+			}
+			else if(e.keyCode == 39){
+				rightPressed = false;
+			}
+		}
+
+		function drawPaddle(){
+			ctx.beginPath();
+			ctx.fillStyle = 'green'
+			ctx.rect(px,py,pw,ph);
+			ctx.fill();
+			ctx.closePath();
+
+			if(px > 0 && leftPressed){
+				px = px - 2;
+			}
+			if(px< canvas.width - pw && rightPressed){
+				px = px + 2;
+			}
+		}
+		function drawball(){
+			ctx.beginPath();
+			ctx.fillStyle = 'red';
+			ctx.arc(x,y,r,0,2*Math.PI) //It helps to draw a arc (x,y,radius,parameter->start,end)
+			ctx.fill();
+			ctx.closePath();
+
+			x = x+dx;
+			y = y+dy;
+			if(x >= canvas.width - r){
+				dx = -dx;
+			}
+			if(x <= r){
+				dx = -dx;
+			}
+			if(y >= canvas.height - r - ph){
+				if(x+r >= px && x+r <= px+pw){
+					dy = -dy;
+				}
+				else{
+
+					document.location.reload();
+					alert("OUT")
+				}
+			}
+			if(y <= r){
+				dy = -dy;
+			}
+		}
+
+		function draw(){
+			ctx.clearRect(0,0,canvas.width,canvas.height);
+			drawball();
+			drawPaddle();
+		};
+		setInterval(draw,10);
+
+
+	</script>
+</body>
+</html>

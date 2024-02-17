@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Menu</title>
+</head>
+
+<script>
+	function combination(){
+		alert("This page having more options..")
+		alert("So, Please try that...")
+	}
+</script>
+
+<style> 
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: linear-gradient(to right,#9c27b0,#8ecdff);
+
+}
+
+ul li{
+	font-size: 30px;
+	margin-left: 80px;
+	margin-top: 30px;
+	width: 400px;
+}
+
+ul li a{
+	text-decoration: none;
+	color: #8ecdff;
+	font-size: 30px;
+	transition: 2s;
+}
+
+ul li a:hover{
+
+	font-weight: 700;
+	color: darkblue;
+	margin-left: 5%;
+	transition: 0.3s;
+	overflow: hidden;
+}
+
+h1{
+	text-align: center;
+	font-size: 70px;
+	transition: 1s;
+	color: rgb(19,100,221);
+}
+
+h1:hover{
+	color: pink;
+	transition-duration: 0.1s;
+	font-size: 65px;
+}
+
+.box{
+	position: absolute;
+	box-sizing: border-box;	
+}
+
+.picture{
+	background: linear-gradient(to top right,pink,pink,red,pink,pink,red,pink,pink);
+	width: 300px;
+	height: 300px;
+	margin-left: 700px;
+	margin-top: 125px;
+	position: absolute;
+	transition: 5s;
+	border-radius: 20%;
+	animation: animo 5s ease-out;
+	animation-iteration-count: infinite;
+
+}
+
+@keyframes animo{
+	from{
+		transform:rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+	}
+
+}
+
+
+.picture:hover{	
+	border-radius: 50%;
+	transition: 1s;
+}
+
+marquee{
+	margin-left: 85%;
+	opacity: 6%;
+
+}
+
+marquee:hover{
+	opacity: 100%;
+	font-family: sans-serif;
+	font-size: 18px;
+	color: lightblue;
+}
+
+.picture p{
+	font-size: 40px;
+	margin-left: 27%;
+	margin-top: 40%;
+	color: white;
+}
+
+.picture:hover{
+	background: blue;
+}
+
+</style>
+
+<body>
+	<h1>Helo!! <span id="name"></span></h1>
+	<h1>Welcome to this Page</h1>
+	<br>
+	<div class="box">
+		<a href="webabout.html" target=-blank><div class="picture">
+			<p>ABOUT</p>
+ 		</div></a>
+		<ul type="circle">
+			<li><a href="storage/3D CUBE/cube.html" id="3dcube" title="07/02/2022"
+				target="-blank">3D CUBE</a></li>
+			<li><a href="storage/Bike/bike.html" id="bike" title="30/01/2022" target="-blank">Bike</a></li>
+			<li><a href="storage/car/car.html" id="car" title="31/01/2022" target="-blank">Car</a></li>
+			<li><a href="storage/Combination/home.html" id="combination" title="11/02/2022" target="-blank" onclick="return(combination());">Combination of Web Page</a></li>
+			<li><a href="storage/ImageRotate/imagerotate.html" id="imagerotate" title="08/02/2022" target="-blank">Image Rotating Animation</a></li>
+			<li><a href="storage/LOGIN/loginform.html" id="login" title="03/02/2022" target="-blank">3D Login Form</a></li>
+			<li><a href="storage/own web page/home.html" id="ownweb" title="30/11/2021" target="-blank">Poster Web Page</a></li>
+			<li><a href="storage/Calculator/calculator.html" id="calc" title="6/3/2022" target="-blank">Calculator</a></li>
+		</ul>
+	</div>
+	<marquee>Created by Surya</marquee>
+	
+
+<script>
+
+	document.getElementById("name").innerHTML=localStorage.getItem("transname")
+
+</script>
+
+</body>
+</html>
